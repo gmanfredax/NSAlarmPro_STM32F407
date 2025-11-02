@@ -101,11 +101,11 @@ static void adc_process_block(const uint16_t *data)
     for (uint32_t sample = 0; sample < ADC_DMA_DEPTH; sample++)
     {
         const uint16_t *row = &data[sample * ADC_CHANNEL_COUNT];
-        sum_vbat += row[ADC_CHANNEL_VBAT];
-        sum_temp += row[ADC_CHANNEL_TEMP];
-        sum_vref += row[ADC_CHANNEL_VREF];
+        sum_vbat += row[ADC_FRONTEND_IDX_VBAT];
+        sum_temp += row[ADC_FRONTEND_IDX_TEMP];
+        sum_vref += row[ADC_FRONTEND_IDX_VREF];
 #if !NSAP_ADC3_AVAILABLE
-        sum_tamper += row[ADC_CHANNEL_TAMPER];
+        sum_tamper += row[ADC_FRONTEND_IDX_TAMPER];
 #endif
     }
     float vref_mv = convert_to_voltage(sum_vref / ADC_DMA_DEPTH);

@@ -57,6 +57,8 @@
 #define LWIP_IGMP 1
 /*----- Value in opt.h for LWIP_DNS: 0 -----*/
 #define LWIP_DNS 1
+/*----- Default Value for LWIP_TCPIP_CORE_LOCKING: 0 ---*/
+#define LWIP_TCPIP_CORE_LOCKING 1
 /*----- Default Value for MEMP_MEM_MALLOC: 0 ---*/
 #define MEMP_MEM_MALLOC 1
 /*----- Value in opt.h for MEM_ALIGNMENT: 1 -----*/
@@ -65,16 +67,20 @@
 #define MEM_SIZE 2048
 /*----- Default Value for MEMP_NUM_TCP_SEG: 16 ---*/
 #define MEMP_NUM_TCP_SEG 32
+/*----- Default Value for PBUF_POOL_BUFSIZE: 592 ---*/
+#define PBUF_POOL_BUFSIZE 1536
 /*----- Value in opt.h for LWIP_ETHERNET: LWIP_ARP || PPPOE_SUPPORT -*/
 #define LWIP_ETHERNET 1
 /*----- Default Value for LWIP_RAW: 0 ---*/
 #define LWIP_RAW 1
 /*----- Value in opt.h for LWIP_DNS_SECURE: (LWIP_DNS_SECURE_RAND_XID | LWIP_DNS_SECURE_NO_MULTIPLE_OUTSTANDING | LWIP_DNS_SECURE_RAND_SRC_PORT) -*/
 #define LWIP_DNS_SECURE 7
-/*----- Default Value for TCP_WND: 2144 ---*/
-#define TCP_WND 4288
-/*----- Default Value for TCP_SND_BUF: 1072 ---*/
-#define TCP_SND_BUF 4288
+/*----- Default Value for TCP_WND: 5840 ---*/
+#define TCP_WND 11680
+/*----- Default Value for TCP_MSS: 536 ---*/
+#define TCP_MSS 1460
+/*----- Default Value for TCP_SND_BUF: 2920 ---*/
+#define TCP_SND_BUF 5840
 /*----- Default Value for LWIP_NETIF_STATUS_CALLBACK: 0 ---*/
 #define LWIP_NETIF_STATUS_CALLBACK 1
 /*----- Default Value for LWIP_NETIF_EXT_STATUS_CALLBACK: 0 ---*/
@@ -101,6 +107,10 @@
 #define DEFAULT_TCP_RECVMBOX_SIZE 6
 /*----- Value in opt.h for DEFAULT_ACCEPTMBOX_SIZE: 0 -----*/
 #define DEFAULT_ACCEPTMBOX_SIZE 6
+/*----- Value in opt.h for LWIP_SOCKET: 1 -----*/
+#define LWIP_SOCKET 0
+/*----- Default Value for LWIP_SO_RCVTIMEO: 0 ---*/
+#define LWIP_SO_RCVTIMEO 1
 /*----- Value in opt.h for RECV_BUFSIZE_DEFAULT: INT_MAX -----*/
 #define RECV_BUFSIZE_DEFAULT 2000000000
 /*----- Value in opt.h for LWIP_USE_EXTERNAL_MBEDTLS: 0 -----*/
@@ -117,6 +127,8 @@
 #define LWIP_HTTPD_SUPPORT_REQUESTLIST 0
 /*----- Default Value for LWIP_HTTPD_CUSTOM_FILES: 0 ---*/
 #define LWIP_HTTPD_CUSTOM_FILES 1
+/*----- Value in opt.h for HTTPD_USE_CUSTOM_FSDATA: 0 -----*/
+#define HTTPD_USE_CUSTOM_FSDATA 1
 /*----- Default Value for LWIP_SNTP: 0 ---*/
 #define LWIP_SNTP 1
 /*----- Default Value for LWIP_MDNS: 0 ---*/
@@ -143,6 +155,8 @@
 #define CHECKSUM_CHECK_ICMP 0
 /*----- Value in opt.h for CHECKSUM_CHECK_ICMP6: 1 -----*/
 #define CHECKSUM_CHECK_ICMP6 0
+
+#define HTTPD_FSDATA_FILE "fsdata.c"
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
 
